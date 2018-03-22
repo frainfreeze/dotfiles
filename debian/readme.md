@@ -108,9 +108,16 @@ sudo apt install virtualbox
 
 ## other
 ```
+$ localectl status
 System Locale: LANG=en_US.UTF-8
                LANGUAGE=en_US:en
     VC Keymap: n/a
    X11 Layout: hr
     X11 Model: pc105
+
+$ setxkbmap -query
+rules:      evdev
+model:      pc104
+layout:     us
+variant:    hbs
 ```
