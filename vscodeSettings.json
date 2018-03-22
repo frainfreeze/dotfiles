@@ -1,0 +1,20 @@
+// preferences > settings
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "code-runner.runInTerminal": true
+}
+
+// keybindings.json
+[
+    {
+        "key": "f9",
+        "command": "code-runner.run"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-code-runner.run"
+    }
+]
