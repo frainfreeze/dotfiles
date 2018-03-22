@@ -25,6 +25,7 @@ Setup instructions, configuration files, etc. are in folder debian-text.
 Docs: 
 - http://pascal.tsu.ru/en/xkb/setup.html
 - https://www.charvolant.org/doug/xkb/html/
+- https://superuser.com/questions/290115/
 
 My keyboards:
 - HP KB-0316 (HR) - fav keyboard, I use default Croatian layout for Debian
