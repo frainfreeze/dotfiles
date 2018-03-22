@@ -26,6 +26,7 @@ Docs:
 - http://pascal.tsu.ru/en/xkb/setup.html
 - https://www.charvolant.org/doug/xkb/html/
 - https://superuser.com/questions/290115/
+- http://rlog.rgtti.com/2014/05/01/how-to-modify-a-keyboard-layout-in-linux/
 
 My keyboards:
 - HP KB-0316 (HR) - fav keyboard, I use default Croatian layout for Debian
