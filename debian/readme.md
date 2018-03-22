@@ -105,3 +105,12 @@ sudo apt install virtualbox
 ## also
 - if you ar running in vm install virtual machine tools, in cas eof windows and wmware workstation it is open-vm-tools
 - browser plugins: https://www.privacytools.io/#addons
+
+## other
+```
+System Locale: LANG=en_US.UTF-8
+               LANGUAGE=en_US:en
+    VC Keymap: n/a
+   X11 Layout: hr
+    X11 Model: pc105
+```
