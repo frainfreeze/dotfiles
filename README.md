@@ -27,6 +27,8 @@ Docs:
 - https://www.charvolant.org/doug/xkb/html/
 - https://superuser.com/questions/290115/
 - http://rlog.rgtti.com/2014/05/01/how-to-modify-a-keyboard-layout-in-linux/
+- http://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+- https://askubuntu.com/questions/254424/
 
 My keyboards:
 - HP KB-0316 (HR) - fav keyboard, I use default Croatian layout for Debian
