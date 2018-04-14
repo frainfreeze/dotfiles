@@ -32,8 +32,8 @@ Docs:
 
 My keyboards:
 - HP KB-0316 (HR) - fav keyboard, I use default Croatian layout for Debian
-- Modecom MC-800G (US) - custom layout, .xmonad-debian, load using
+- Modecom MC-800G (US with UK enter) - custom layout, .Xmodmap
+- METOO Black - (US ANSI) - custom layout .Xmodmap
 ```
-xmodmap ~/.xmodmap-`uname -n`
+xmodmap ~/.Xmodmap
 ```
-- METOO Zero Black - shipping :>
