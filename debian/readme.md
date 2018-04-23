@@ -106,6 +106,15 @@ sudo apt install virtualbox
 - if you ar running in vm install virtual machine tools, in cas eof windows and wmware workstation it is open-vm-tools
 - browser plugins: https://www.privacytools.io/#addons
 
+## disk
+cd media
+sudo mkdir DiskLabel
+sudo blkid
+sudo umount /your/disk
+sudo nano /etc/fstab #add disks using info from blkid
+sudo mount -a
+
+
 ## other
 ```
 $ localectl status
