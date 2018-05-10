@@ -31,6 +31,7 @@ Login into your new os:
 - enter 'su' and press enter, enter your root password, (press 'y' and 'enter' when prompted)
     run following commands (after -> sign):
     -> nano /etc/apt/sources.list
+        
         - delete or comment out with # line 3, deb cdrom:[Debian GNu/....
         - add 'contrib non-free' after each main
         - your screen should look like this https://i.imgur.com/jaWsWhY.png
@@ -45,7 +46,6 @@ Login into your new os:
 - close terminal
 - set wallpaper, lets make thing look less shit https://i.imgur.com/ZBDw1wZ.jpg
 - reboot
-
 
 - open new terminal, now you re going to work as user instad of root
 
