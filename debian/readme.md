@@ -35,44 +35,32 @@ Login into your new os:
         
     $ apt update && apt upgrade
     $ apt install sudo gksu synaptic apt-xapian-index policykit-1-gnome curl wget
-  *1$ wget -O - https://pastebin.com/raw/6mc00yBj | bash
+    $ wget -O - https://pastebin.com/raw/6mc00yBj | bash
     $ usermod -aG sudo YOUR_USERNAME
+    $ reboot
     ```
-
-- close terminal
-- set wallpaper, lets make thing look less shit https://i.imgur.com/ZBDw1wZ.jpg
-- reboot
 - open new terminal, now you re going to work as user instad of root
 
 ## bloat (eye candy)
 - if you re into windows 10 https://github.com/B00merang-Project/Windows-10
 - else arc theme is quite cool too https://github.com/horst3180/arc-theme
-
 - i ll use adapta for this config https://github.com/adapta-project/adapta-gtk-theme
 run following commands:
 ```
-    $ sudo apt install  autoconf automake inkscape  libgdk-pixbuf2.0-dev  libglib2.0-dev  libsass0  libxml2-utils  pkg-config  sassc fonts-noto
-    $ sudo git clone https://github.com/adapta-project/adapta-gtk-theme.git
-    $ cd adapta-gtk-theme
-    $ sudo ./autogen.sh
-    $ sudo make
-    $ sudo make install
-```    
-Once its done go to aplications menu > settings > appearance and select theme you want, for me its adapta-noko-eta
+$ sudo echo hi
+$ wget -O - https://pastebin.com/raw/1e0AJ80t | bash
+```
 
-Then applications > settings > window manager: again adapta nokto
+Once its done:
+```
+- go to aplications menu > settings > appearance and select theme you want, for me its adapta-noko-eta
+- then applications > settings > window manager: again adapta nokto
+- aplications > settings > pannel, dropdown select panel 2 and remove it, select panel 1 again, row size: 20, lock panel uncheck and drag on bottom lock again, uncheck dont reserve space on borders
+- under items tab add weather pannel, setup for your city, appearance - liquid dark, days in columns, scrolbox - only temperature
+- settings > apearance > icons, select paper-mono-dark; fonts-noto sans ui
+- right click on desktop > desktop settings > set wallpaper
+```
 
-Aplications > settings > pannel, dropdown select panel 2 and remove it, select panel 1 again, row size: 20, lock panel uncheck and drag on bottom lock again, uncheck dont reserve space on borders
-
-Under items tab add weather pannel, setup for your city, appearance - liquid dark, days in columns, scrolbox - only temperature
-
-download "paper icons" for debian from https://snwh.org/paper/download
-fire up terminal and do
-- cd ~/Downloads
-- sudo dpkg -i filname.deb (downloaded filename)
- 
- go to settings > apearance > icons, select paper-mono-dark; fonts-noto sans ui
-    
 ## development tools
 1. graphical
  - visual studio code
@@ -129,6 +117,20 @@ layout:     us
 variant:    hbs
 ```
 ```
-*1 https://pastebin.com/raw/6mc00yBj
+https://pastebin.com/raw/6mc00yBj
 sudo apt -y install build-essential debian-keyring mousepad network-manager network-manager-gnome p7zip unzip policykit-1-gnome p7zip-full aspell aspell-en hunspell hunspell-en-us mythes-en-us ristretto rsync thunar-archive-plugin fonts-dejavu fonts-dejavu-extra fonts-droid-fallback fonts-freefont-ttf fonts-liberation fonts-noto-mono fonts-opensymbol libreoffice-writer libreoffice-calc libreoffice-impress ttf-bitstream-vera ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation ttf-mscorefonts-installer ufw vlc xarchiver xfce4-clipman xfce4-panel-dev xfce4-power-manager xfce4-screenshooter xfce4-taskmanager xfce4-terminal xfce4-xkb-plugin xserver-xorg-input-synaptics git chromium chromium-l10n
+```
+```
+https://pastebin.com/raw/1e0AJ80t
+sudo apt install  autoconf automake inkscape  libgdk-pixbuf2.0-dev  libglib2.0-dev  libsass0  libxml2-utils  pkg-config  sassc fonts-noto
+sudo git clone https://github.com/adapta-project/adapta-gtk-theme.git
+cd adapta-gtk-theme
+sudo ./autogen.sh
+sudo make
+sudo make install
+sudo cd /usr/share/images/desktop-base
+sudo wget -O background.png https://i.imgur.com/8ipvBl7.png
+cd ~/Downloads
+wget -O paperIcons.deb https://snwh.org/paper/download.php?owner=snwh&ppa=pulp&pkg=paper-icon-theme,16.04
+sudo dpkg -i paperIcons.deb
 ```
