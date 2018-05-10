@@ -14,8 +14,8 @@ Using graphical install:
     
 > finish partitioning
 > radio button set on yes
->use network mirror: yes, Switzerland; deb.debian.org; blank proxy
->software selection: xfce, print server, standard sys utilities
+> use network mirror: yes, Switzerland; deb.debian.org; blank proxy
+> software selection: xfce, print server, standard sys utilities
 > install grub to bootloader: yes (if in vm, or single boot)
 > /dev/sda
 ```
@@ -33,10 +33,9 @@ Login into your new os:
         - your screen should look like this https://i.imgur.com/jaWsWhY.png
         - pres crtl-x then y then enter
         
-    $ apt update
-    $ apt upgrade
+    $ apt update && apt upgrade
     $ apt install sudo gksu synaptic apt-xapian-index policykit-1-gnome curl wget
-    $ wget -O - https://pastebin.com/raw/6mc00yBj | bash
+*[1]$ wget -O - https://pastebin.com/raw/6mc00yBj | bash
     $ usermod -aG sudo YOUR_USERNAME
     ```
 
@@ -104,12 +103,14 @@ sudo apt install virtualbox
 - browser plugins: https://www.privacytools.io/#addons
 
 ## disk
-cd media
-sudo mkdir DiskLabel
-sudo blkid
-sudo umount /your/disk
-sudo nano /etc/fstab #add disks using info from blkid
-sudo mount -a
+```
+$ cd media
+$ sudo mkdir DiskLabel
+$ sudo blkid
+$ sudo umount /your/disk
+$ sudo nano /etc/fstab #add disks using info from blkid
+$ sudo mount -a
+```
 
 
 ## other
@@ -126,4 +127,8 @@ rules:      evdev
 model:      pc104
 layout:     us
 variant:    hbs
+```
+```
+*[1] https://pastebin.com/raw/6mc00yBj
+sudo apt -y install build-essential debian-keyring mousepad network-manager network-manager-gnome p7zip unzip policykit-1-gnome p7zip-full aspell aspell-en hunspell hunspell-en-us mythes-en-us ristretto rsync thunar-archive-plugin fonts-dejavu fonts-dejavu-extra fonts-droid-fallback fonts-freefont-ttf fonts-liberation fonts-noto-mono fonts-opensymbol libreoffice-writer libreoffice-calc libreoffice-impress ttf-bitstream-vera ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation ttf-mscorefonts-installer ufw vlc xarchiver xfce4-clipman xfce4-panel-dev xfce4-power-manager xfce4-screenshooter xfce4-taskmanager xfce4-terminal xfce4-xkb-plugin xserver-xorg-input-synaptics git chromium chromium-l10n
 ```
