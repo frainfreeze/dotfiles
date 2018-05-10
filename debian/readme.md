@@ -45,10 +45,19 @@ Login into your new os:
 - if you re into windows 10 https://github.com/B00merang-Project/Windows-10
 - else arc theme is quite cool too https://github.com/horst3180/arc-theme
 - i ll use adapta for this config https://github.com/adapta-project/adapta-gtk-theme
+download papericons from here https://snwh.org/paper/download
 run following commands:
 ```
-$ sudo echo hi
-$ wget -O - https://pastebin.com/raw/1e0AJ80t | bash
+sudo apt install  autoconf automake inkscape  libgdk-pixbuf2.0-dev sassc inkscape libglib2.0-dev  libsass0  libxml2-utils  pkg-config  sassc fonts-noto
+sudo git clone https://github.com/adapta-project/adapta-gtk-theme.git
+cd adapta-gtk-theme
+sudo ./autogen.sh
+sudo make
+sudo make install
+sudo cd /usr/share/images/desktop-base
+sudo wget -O background.png https://i.imgur.com/8ipvBl7.png
+cd ~/Downloads
+sudo dpkg -i paperIcons.deb
 ```
 
 Once its done:
@@ -58,36 +67,34 @@ Once its done:
 - aplications > settings > pannel, dropdown select panel 2 and remove it, select panel 1 again, row size: 20, lock panel uncheck and drag on bottom lock again, uncheck dont reserve space on borders
 - under items tab add weather pannel, setup for your city, appearance - liquid dark, days in columns, scrolbox - only temperature
 - settings > apearance > icons, select paper-mono-dark; fonts-noto sans ui
-- right click on desktop > desktop settings > set wallpaper
+- right click on desktop > desktop settings > click on wallpaper, set color to solid color, black
 ```
 
 ## development tools
 1. graphical
  - visual studio code
-    download .deb stable from https://code.visualstudio.com/
-    -> cd ~/Downloads
-    -> ls (to see files)
-    -> sudo dpkg -i filename.deb (you can type fist few leters of filename and press tab to autocomplete)
-    open it from menu - development tools -> extensions (5th button, box with box) 
-        - search and install code runner, 
+    ```
+    run wget -O - https://pastebin.com/raw/DaEWqrj8 | bash
+    then  open vscode and install following extensions: 
+        - code runner, 
         - c/c++ from microsoft, 
         - c/c++ snippets from harsh (for autocomplete like visual studio), 
         - c++ intellisense from austing, 
-        - plastic (theme, activate from file-preferences-themes)
-        
-
-2. console
--> sudo apt install terminator tmux mc links python-pip codeblocks
--> sudo pip install mpsyt
-
+        - clang-format
+        - code spell checker
+        - markdown prevoew enhanced
+        - python
+ - jetbrains CLion
+```
 ## virtualbox
 Add backports to your sources.list
+```
 deb http://ftp.debian.org/debian stretch-backports main contrib non-free
 sudo apt update
 sudo apt install virtualbox
-
-## also
-- if you ar running in vm install virtual machine tools, in cas eof windows and wmware workstation it is open-vm-tools
+```
+## misc
+- if you are running in vm install virtual machine tools, in case of windows and wmware workstation it is open-vm-tools
 - browser plugins: https://www.privacytools.io/#addons
 
 ## disk
@@ -119,18 +126,4 @@ variant:    hbs
 ```
 https://pastebin.com/raw/6mc00yBj
 sudo apt -y install build-essential debian-keyring mousepad network-manager network-manager-gnome p7zip unzip policykit-1-gnome p7zip-full aspell aspell-en hunspell hunspell-en-us mythes-en-us ristretto rsync thunar-archive-plugin fonts-dejavu fonts-dejavu-extra fonts-droid-fallback fonts-freefont-ttf fonts-liberation fonts-noto-mono fonts-opensymbol libreoffice-writer libreoffice-calc libreoffice-impress ttf-bitstream-vera ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation ttf-mscorefonts-installer ufw vlc xarchiver xfce4-clipman xfce4-panel-dev xfce4-power-manager xfce4-screenshooter xfce4-taskmanager xfce4-terminal xfce4-xkb-plugin xserver-xorg-input-synaptics git chromium chromium-l10n
-```
-```
-https://pastebin.com/raw/1e0AJ80t
-sudo apt install  autoconf automake inkscape  libgdk-pixbuf2.0-dev  libglib2.0-dev  libsass0  libxml2-utils  pkg-config  sassc fonts-noto
-sudo git clone https://github.com/adapta-project/adapta-gtk-theme.git
-cd adapta-gtk-theme
-sudo ./autogen.sh
-sudo make
-sudo make install
-sudo cd /usr/share/images/desktop-base
-sudo wget -O background.png https://i.imgur.com/8ipvBl7.png
-cd ~/Downloads
-wget -O paperIcons.deb https://snwh.org/paper/download.php?owner=snwh&ppa=pulp&pkg=paper-icon-theme,16.04
-sudo dpkg -i paperIcons.deb
 ```
