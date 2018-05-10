@@ -29,19 +29,22 @@ Login into your new os:
 - open terminal emulator (up left, applications)
 
 - enter 'su' and press enter, enter your root password, (press 'y' and 'enter' when prompted)
-    run following commands (after -> sign):
-    -> nano /etc/apt/sources.list
+    run following commands (after $ sign):
+    
+    $ nano /etc/apt/sources.list
         
         - delete or comment out with # line 3, deb cdrom:[Debian GNu/....
         - add 'contrib non-free' after each main
         - your screen should look like this https://i.imgur.com/jaWsWhY.png
         - pres crtl-x then y then enter
     
-    -> apt update
-    -> apt upgrade
-    -> apt install sudo gksu synaptic apt-xapian-index policykit-1-gnome curl wget
-    -> wget -O - https://pastebin.com/raw/6mc00yBj | bash
-    -> usermod -aG sudo YOUR_USERNAME
+    ```
+    $ apt update
+    $ apt upgrade
+    $ apt install sudo gksu synaptic apt-xapian-index policykit-1-gnome curl wget
+    $ wget -O - https://pastebin.com/raw/6mc00yBj | bash
+    $ usermod -aG sudo YOUR_USERNAME
+    ```
 
 - close terminal
 - set wallpaper, lets make thing look less shit https://i.imgur.com/ZBDw1wZ.jpg
