@@ -30,15 +30,13 @@ Login into your new os:
 
 - enter 'su' and press enter, enter your root password, (press 'y' and 'enter' when prompted)
     run following commands (after $ sign):
-    
-    $ nano /etc/apt/sources.list
-        
+    ```
+    $ nano /etc/apt/sources.list    
         - delete or comment out with # line 3, deb cdrom:[Debian GNu/....
         - add 'contrib non-free' after each main
         - your screen should look like this https://i.imgur.com/jaWsWhY.png
         - pres crtl-x then y then enter
-    
-    ```
+        
     $ apt update
     $ apt upgrade
     $ apt install sudo gksu synaptic apt-xapian-index policykit-1-gnome curl wget
