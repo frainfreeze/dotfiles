@@ -3,6 +3,7 @@ Download debian amd64 [here](https://cdimage.debian.org/debian-cd/current/amd64/
 
 ## instalation
 Using graphical install: 
+```
 - install lang: english, 
 - location: other->europe->croatia,
 - locale: en_US,
@@ -12,24 +13,19 @@ Using graphical install:
 - scheeme: seperate /home /var /temp
     
 > finish partitioning
-
 > radio button set on yes
-
 >use network mirror: yes, Switzerland; deb.debian.org; blank proxy
-
 >software selection: xfce, print server, standard sys utilities
-
 > install grub to bootloader: yes (if in vm, or single boot)
-
 > /dev/sda
+```
 
 ## after install stuff
 Login into your new os:
 - xfce: use default config
 - open terminal emulator (up left, applications)
-
 - enter 'su' and press enter, enter your root password, (press 'y' and 'enter' when prompted)
-    run following commands (after $ sign):
+    and run following commands (after $ sign):
     ```
     $ nano /etc/apt/sources.list    
         - delete or comment out with # line 3, deb cdrom:[Debian GNu/....
@@ -47,7 +43,6 @@ Login into your new os:
 - close terminal
 - set wallpaper, lets make thing look less shit https://i.imgur.com/ZBDw1wZ.jpg
 - reboot
-
 - open new terminal, now you re going to work as user instad of root
 
 ## bloat (eye candy)
@@ -56,13 +51,14 @@ Login into your new os:
 
 - i ll use adapta for this config https://github.com/adapta-project/adapta-gtk-theme
 run following commands:
-    - sudo apt install  autoconf automake inkscape  libgdk-pixbuf2.0-dev  libglib2.0-dev  libsass0  libxml2-utils  pkg-config  sassc fonts-noto
-    - sudo git clone https://github.com/adapta-project/adapta-gtk-theme.git
-    - cd adapta-gtk-theme
-    - sudo ./autogen.sh
-    - sudo make
-    - sudo make install
-    
+```
+    $ sudo apt install  autoconf automake inkscape  libgdk-pixbuf2.0-dev  libglib2.0-dev  libsass0  libxml2-utils  pkg-config  sassc fonts-noto
+    $ sudo git clone https://github.com/adapta-project/adapta-gtk-theme.git
+    $ cd adapta-gtk-theme
+    $ sudo ./autogen.sh
+    $ sudo make
+    $ sudo make install
+```    
 Once its done go to aplications menu > settings > appearance and select theme you want, for me its adapta-noko-eta
 
 Then applications > settings > window manager: again adapta nokto
