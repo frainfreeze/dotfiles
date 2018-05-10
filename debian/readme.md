@@ -17,7 +17,7 @@ Using graphical install:
 
 >use network mirror: yes, Switzerland; deb.debian.org; blank proxy
 
->software selection: debian desktop enviroment, xfce, print server, standard sys utilities
+>software selection: xfce, print server, standard sys utilities
 
 > install grub to bootloader: yes (if in vm, or single boot)
 
