@@ -10,7 +10,7 @@ Quick navigation:
 ## Debian
 Setup instructions, configuration files, etc. are in folder debian.
 
-![desktop screenshot](https://i.imgur.com/nTzaSuo.png)
+![desktop screenshot](https://i.imgur.com/DfCRIMi.png)
 
 ## Debian text
 Setup instructions, configuration files, etc. are in folder debian-text.
