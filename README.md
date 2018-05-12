@@ -21,7 +21,7 @@ Setup instructions, configuration files, etc. are in folder debian-text.
 -add me-
 
 ## Keyboard setup
-![](https://www.charvolant.org/doug/xkb/html/img3.png)
+![](https://www.bug.hr/img/kupili-smo-jeftinu-mehanicku-tipkovnicu-iz-kine-je-li-se-isplatilo_gduZkX.png)
 Docs: 
 - http://pascal.tsu.ru/en/xkb/setup.html
 - https://www.charvolant.org/doug/xkb/html/
