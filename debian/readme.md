@@ -85,7 +85,7 @@ Once its done:
         - markdown prevoew enhanced
         - python
  - jetbrains CLion
-```
+
 ## virtualbox
 Add backports to your sources.list
 ```
