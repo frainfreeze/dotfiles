@@ -4,7 +4,27 @@
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
-    "code-runner.runInTerminal": true
+    "code-runner.runInTerminal": true,
+    "cSpell.userWords": [
+        "Dalvik",
+        "VM's",
+        "brainfuck"
+    ],
+    "cSpell.language": "en,en-GB,en-US",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "python": "python3",
+        "lua": "lua",
+        "shellscript": "bash",
+        "csharp": "scriptcs",
+        "clojure": "lein exec"
+    },
+    "code-runner.customCommand": "cd $dir && g++ $fileName -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "window.zoomLevel": 0
 }
 
 // keybindings.json
