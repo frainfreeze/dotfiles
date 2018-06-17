@@ -124,7 +124,7 @@ export PATH=/opt/mxe/usr/bin:/home/frain/build-i686-elf/linux/output/bin:/usr/lo
 listening() { lsof -n -iTCP:$1 | grep LISTEN; }
 
 #git clone and cd into dir, takes username and repo name
-mkcd() { git clone $1; cd $2; }
+gitcd() { git clone $1; cd $2; }
 
 #search
 function whereis(){ find . -name "$1*"; }
