@@ -133,7 +133,5 @@ function whereis(){ find . -name "$1*"; }
 shazam(){ eject; }
 
 #list files as ascii tree
-function tree {
-    find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
-}
+function tree { find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g' }
 
