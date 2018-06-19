@@ -131,3 +131,7 @@ function whereis(){ find . -name "$1*"; }
 
 #eject cdrom
 shazam(){ eject; }
+
+#list files as ascii tree
+tree { find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/" };
+
