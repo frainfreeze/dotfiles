@@ -121,17 +121,24 @@ export PATH=/opt/mxe/usr/bin:/home/frain/build-i686-elf/linux/output/bin:/usr/lo
 
 ### functions ###
 #type listening 8080 to find out what process is blocking that port
-listening() { lsof -n -iTCP:$1 | grep LISTEN; }
+function listening { lsof -n -iTCP:$1 | grep LISTEN; }
 
 #git clone and cd into dir, takes username and repo name
-gitcd() { git clone https://github.com/$1/$2.git; cd $2; }
+function gitcd { git clone https://github.com/$1/$2.git; cd $2; }
 
 #search
-function whereis(){ find . -name "$1*"; }
+function whereis{ find . -name "$1*"; }
 
 #eject cdrom
-shazam(){ eject; }
+function shazam{ eject; }
 
 #list files as ascii tree
 function tree { find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g' }
 
+#git status add commit and push
+function gitmagic {
+    git status;    
+    git add --all;
+    git commit -a -m"${@}";
+    git push;
+}
