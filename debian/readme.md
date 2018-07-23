@@ -20,17 +20,17 @@ Using graphical install:
 > /dev/sda
 ```
 
-## after install stuff
+## after install
 Login into your new os:
 - xfce: use default config
 - open terminal emulator (up left, applications)
-- enter 'su' and press enter, enter your root password, (press 'y' and 'enter' when prompted)
+- type 'su' and press enter, enter your root password, (press 'y' and 'enter' when prompted)
     and run following commands (after $ sign):
     ```
     $ nano /etc/apt/sources.list    
         - delete or comment out with # line 3, deb cdrom:[Debian GNu/....
         - add 'contrib non-free' after each main
-        - your screen should look like this https://i.imgur.com/jaWsWhY.png
+        - your screen should look something like this https://i.imgur.com/jaWsWhY.png
         - pres crtl-x then y then enter
         
     $ apt update && apt upgrade
@@ -45,8 +45,8 @@ Login into your new os:
 - if you re into windows 10 https://github.com/B00merang-Project/Windows-10
 - else arc theme is quite cool too https://github.com/horst3180/arc-theme
 - i ll use adapta for this config https://github.com/adapta-project/adapta-gtk-theme
-download papericons from here https://snwh.org/paper/download
-run following commands:
+- download papericons from here https://snwh.org/paper/download
+- run following commands:
 ```
 sudo apt install  autoconf automake inkscape  libgdk-pixbuf2.0-dev sassc inkscape libglib2.0-dev  libsass0  libxml2-utils  pkg-config  sassc fonts-noto
 sudo git clone https://github.com/adapta-project/adapta-gtk-theme.git
