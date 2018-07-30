@@ -151,7 +151,8 @@ sudo apt -y install build-essential debian-keyring mousepad network-manager netw
         - pres crtl-x then y then enter
         
     $ apt update && apt upgrade
-    $ usermod -aG sudo YOUR_USERNAME
+    $ apt install sudo && usermod -aG sudo YOUR_USERNAME
+    $ reboot
 ```
 
 2. Setting up console resolution
