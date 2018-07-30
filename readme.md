@@ -143,24 +143,31 @@ sudo apt -y install build-essential debian-keyring mousepad network-manager netw
 ![console screenshot](https://i.imgur.com/1KwYS5y.png)
 
 1. Install debian
+```bash
+     $ nano /etc/apt/sources.list    
+        - delete or comment out with # line 3, deb cdrom:[Debian GNu/....
+        - add 'contrib non-free' after each main
+        - your screen should look something like this https://i.imgur.com/jaWsWhY.png
+        - pres crtl-x then y then enter
+        
+    $ apt update && apt upgrade
+    $ usermod -aG sudo YOUR_USERNAME
+```
+
 2. Setting up console resolution
   - apt install hwinfo
   - hwinfo --framebuffer //to see available resolutions
   - sudo nano /etc/default/grub
 ```
-GRUB_GFXMODE=1024x768 //enter one of available resolutions
-GRUB_GFXPAYLOAD="keep"
-GRUB_CMDLINE_LINUX="nomodeset"
+    GRUB_GFXMODE=1024x768 //enter one of available resolutions
+    GRUB_GFXPAYLOAD="keep"
+    GRUB_CMDLINE_LINUX="nomodeset"
 ```
   - sudo update-grub
   - sudo reboot
- 
-3. Setting up Development enviroment
- - vim so/4237817
- - tmux
- - mc/ranger
- - clang & py3
 
+3. Setting up Development enviroment
+ - `apt install build-essential python3 python3-pip tmux git curl wget links rsync ranger p7zip-full htop`
 
 ## FreeBSD
 -add me-
