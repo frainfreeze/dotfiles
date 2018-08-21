@@ -8,53 +8,64 @@ Download debian amd64 netinst [here](https://cdimage.debian.org/debian-cd/curren
 ```
 Using graphical install: 
 - install lang: english
-- location: other->europe->croatia
 - locale: en_US
 - partition: guided - use entire disc
 - scheme: seperate /home /var /temp
 - use network mirror: yes, Switzerland; deb.debian.org; blank proxy
-- software selection: standard sys utilities. xfce & print server optional
+- software selection: standard sys utilities. xfce & print server
 ```
 
 ### after install
-Login into your new os:
-If xfce: use default config
-Run following as superuser:
+```bash
+# as superuser:
+nano /etc/apt/sources.list    
+    # - delete or comment out deb cdrom:[Debian GNu/....
+    # - add 'contrib non-free' after each main
+apt-get update && apt-get upgrade
+apt-get install sudo gksu synaptic apt-xapian-index policykit-1-gnome curl wget git p7zip-full 
+wget -O - https://pastebin.com/raw/6mc00yBj | bash # skip if no gui
+usermod -aG sudo YOUR_USERNAME
+reboot
 ```
-$ nano /etc/apt/sources.list    
-    - delete or comment out deb cdrom:[Debian GNu/....
-    - add 'contrib non-free' after each main
-$ apt-get update && apt-get upgrade
-$ apt-get install sudo gksu synaptic apt-xapian-index policykit-1-gnome curl wget
-$ wget -O - https://pastebin.com/raw/6mc00yBj | bash # skip if no gui
-$ usermod -aG sudo YOUR_USERNAME
-$ reboot
-```
-- open new terminal, now you re going to work as user instad of root
 
 ### bloat (eye candy)
-I use [Arc](https://github.com/horst3180/arc-theme) and [Adapta](https://github.com/adapta-project/adapta-gtk-theme) elements plus [papericons](https://snwh.org/paper/download).
+```bash 
+# as user:
+cd ~/Downloads
 
-Once those are installed::
-```
-- applications menu > settings > appearance > style: Adapta-Eta, icons: Paper, fonts: Noto Sans UI 10
-- applications menu > settings > window manager: Adapta-nokto
-- applications menu > settings > pannel: remove panel 2, panel 1: row size: 20, uncheck "don't reserve space on borders"
-- applications menu > settings > pannel > items: Whisker menu, window buttons, separator, workspace switcher, pulse plugin, clock, notification area, action buttons
+# Download papericons from https://snwh.org/paper/download
+sudo dpkg -i paper*.deb
+sudo apt-get install -f
+
+# Download Axis theme https://www.xfce-look.org/p/1016678/
+tar zxf 95158-axis-xfwm.tar.gz 
+sudo cp -pr axis* /usr/share/themes/
+rm -R axis*
 ```
 
-### development tools
+### basic software
 1. gui
- - visual studio code
- - jetbrains CLion
+```bash
+# Download visual studio code from https://code.visualstudio.com/Download
+sudo dpkg -i <code>.deb
+sudo apt-get install -f
 
-2. tui
-- vim
-- tmux
+# get firefox and extract in home/bin/firefox 
+# https://www.mozilla.org/en-US/firefox/developer/
+# browser plugins: https://www.privacytools.io/#addons
 
+sudo apt install chromium
+```
 
-### misc
-- tui tools: `apt install build-essential python3 python3-pip tmux git curl wget links rsync ranger p7zip-full htop`
+2. tui & dev
+```bash
+sudo apt-get install tmux ranger links htop build-essential python3 python3-pip
+```
+
+3. misc
+`sudo apt install rsync ristretto thunar-archive-plugin libreoffice-writer vlc xarchiver xfce4-panel-dev `
+
+### Other
 - disks
 ```bash
     $ cd /media
@@ -75,12 +86,16 @@ Once those are installed::
     $ sudo update-grub
     $ sudo reboot
 ```
-- if you are running in vm install virtual machine tools, in case of windows host and wmware workstation it is open-vm-tools
-- browser plugins: https://www.privacytools.io/#addons
+- virtual machines
+```
+# vmware player
+# dl from https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/
+cd ~/Downloads/
+chmod +x VMware-Player<ver>.bundle
+sudo ./VMware-Player<ver>.bundle
 
-**https://pastebin.com/raw/6mc00yBj**
-```bash
-sudo apt -y install build-essential debian-keyring mousepad network-manager network-manager-gnome p7zip unzip policykit-1-gnome p7zip-full aspell aspell-en hunspell hunspell-en-us mythes-en-us ristretto rsync thunar-archive-plugin fonts-dejavu fonts-dejavu-extra fonts-droid-fallback fonts-freefont-ttf fonts-liberation fonts-noto-mono fonts-opensymbol libreoffice-writer libreoffice-calc libreoffice-impress ttf-bitstream-vera ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation ttf-mscorefonts-installer ufw vlc xarchiver xfce4-clipman xfce4-panel-dev xfce4-power-manager xfce4-screenshooter xfce4-taskmanager xfce4-terminal xfce4-xkb-plugin xserver-xorg-input-synaptics git chromium chromium-l10n
+# vbox
+sudo apt install virtualbox
 ```
 
 ## Keyboard setup
