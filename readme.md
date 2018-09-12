@@ -45,6 +45,7 @@ rm -R axis*
 
 ### basic software
 1. gui
+
 ```bash
 # Download visual studio code from https://code.visualstudio.com/Download
 sudo dpkg -i <code>.deb
@@ -58,11 +59,13 @@ sudo apt install chromium
 ```
 
 2. tui & dev
+
 ```bash
 sudo apt-get install tmux ranger links htop build-essential python3 python3-pip
 ```
 
 3. misc
+
 `sudo apt install rsync ristretto thunar-archive-plugin libreoffice-writer vlc xarchiver xfce4-panel-dev `
 
 ### Other
