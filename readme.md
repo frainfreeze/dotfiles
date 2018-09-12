@@ -70,6 +70,7 @@ sudo apt-get install tmux ranger links htop build-essential python3 python3-pip
 
 ### Other
 - disks
+
 ```bash
     $ cd /media
     $ sudo mkdir DiskLabel
@@ -79,6 +80,7 @@ sudo apt-get install tmux ranger links htop build-essential python3 python3-pip
     $ sudo mount -a
 ```
 - setting up console resolution
+
 ```bash
     $ apt install hwinfo
     $ hwinfo --framebuffer //to see available resolutions
@@ -90,6 +92,7 @@ sudo apt-get install tmux ranger links htop build-essential python3 python3-pip
     $ sudo reboot
 ```
 - virtual machines
+
 ```
 # vmware player
 # dl from https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/
