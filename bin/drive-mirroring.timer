@@ -1,0 +1,9 @@
+[Unit]
+Description=Drive sync
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

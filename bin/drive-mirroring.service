@@ -1,0 +1,6 @@
+[Unit]
+Description=Drive sync
+
+[Service]
+Type=simple
+ExecStart=/home/frain/bin/drive-mirroring

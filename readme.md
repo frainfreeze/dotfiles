@@ -85,6 +85,7 @@ Ensure the two disks are automatically mounted in a known location
     $ sudo umount /your/disk
     $ sudo nano /etc/fstab #add disks using info from blkid
     $ sudo mount -a
+    $ sudo chown -R $USER:$USER /media/disk # for admin rights on disk
 ```
 
 Systemd timers are composed of two files, a service for performing some task, and a timer for specifying when the service should execute. The service file will point to a bash script that will call rsync to perform the actual task of mirroring the two drives.
@@ -94,10 +95,10 @@ Mirroring script can be found in the bin folder.
 
 ```bash
 # excerpt
-rsync -ahvAE --delete --stats $SOURCE $DEST 2>&1 | tee /var/log/drive-mirroring.log
+rsync -ahvAE --delete --stats $SOURCE $DEST 2>&1 | tee $LOGS/drive-mirroring.log
 ```
 
-We’ve used the `tee` command to pipe the output (stdout and stderr as per the 2>&1) of rsync to two places – stdout and the file /var/log/drive-mirroring.log. The stdout in the context of this setup will be systemd’s journal (systemd’s logs) since we’ll be calling this bash script from within a systemd service.
+We’ve used the `tee` command to pipe the output (stdout and stderr as per the 2>&1) of rsync to two places – stdout and the file $LOGS/drive-mirroring.log. The stdout in the context of this setup will be systemd’s journal (systemd’s logs) since we’ll be calling this bash script from within a systemd service.
 
 In the script, I’ve specified some arguments to customize the behavior of rsync. Here is a brief description and reason for each option:
 ```
@@ -115,26 +116,8 @@ In the script, I’ve specified some arguments to customize the behavior of rsyn
 Save this file as `/etc/systemd/system/drive-mirroring.service`:
 
 ```bash
-[Unit]
-Description=Drive sync
-
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/drive-mirroring
-```
-
-And finally the timer is saved as `/etc/systemd/system/drive-mirroring.timer`
-
-```bash
-[Unit]
-Description=Drive sync
-
-[Timer]
-OnCalendar=weekly
-Persistent=true
-
-[Install]
-WantedBy=timers.target
+sudo cp drive-mirroring.service /etc/systemd/system/drive-mirroring.service
+sudo cp drive-mirroring.timer /etc/systemd/system/drive-mirroring.timer
 ```
 
 You can have a look at systemd timers to customize the frequency of the sync. I’ve set it to sync weekly (which defaults to Mondays at 12AM).
@@ -147,7 +130,7 @@ $ systemctl enable drive-mirroring.timer  # or replace `enable` with `start`
 
 You can get information about the systemd timer or service using `systemctl drive-mirroring.service` (hint – the .service can be omitted, but anything else like a .timer must be explicit).
 
-And you can view the systemd logs for a particular service using` journalctl -u drive-mirroring.service`. We’ve also piped the output of rsync to /var/log/drive-mirroring.log so the output of rsync can also be accessed there.
+And you can view the systemd logs for a particular service using` journalctl -u drive-mirroring.service`. We’ve also piped the output of rsync to $LOGS/drive-mirroring.log so the output of rsync can also be accessed there.
 
 ### other
 

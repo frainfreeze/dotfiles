@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "########### Drive mirroring starting at `date` ###########"
+
+SOURCE=/media/alpha/
+DEST=/media/beta/mirror
+LOGS=/media/beta/logs
+LOG=$LOGS/"`date '+%Y-%m-%d'`.log"
+
+if [ ! -d "$LOGS" ]
+then mkdir "$LOGS"
+fi
+
+touch $LOGS/"`date '+%Y-%m-%d'`.log"
+
+rsync -ahvAE --delete --stats $SOURCE $DEST 2>&1 | tee $LOG
+echo "########### Drive mirroring completed at `date` ###########" >> $LOG
