@@ -37,10 +37,10 @@ conky.config = {
 conky.text = [[
 ${scroll 40 5 $nodename - $sysname $kernel on $machine | Per Aspera ad Astra }
 $hr
-${color grey}Uptime:$color $uptime
 ${color grey}RAM:$color $mem/$memmax - $memperc% ${membar 4}
 ${color grey}Swap:$color $swap/$swapmax - $swapperc% ${swapbar 4}
 ${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+${color grey}Uptime:$color $uptime | CPU temp: ${exec sensors | grep -A 0 'Physical id 0' | cut -c17-25}
 $hr
 ${color white}Name              PID   CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
