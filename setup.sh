@@ -10,10 +10,10 @@ sudo apt-get -y install chromium audacious ristretto vlc libreoffice-writer libr
 sudo apt -y install rsync thunar-archive-plugin xarchiver xfce4-terminal synaptic curl wget p7zip-full unzip gparted
 
 ### fonts and spell checking
-sudo apt -y install fonts-dejavu fonts-dejavu-extra fonts-droid-fallback fonts-freefont-ttf fonts-liberation fonts-noto-mono fonts-opensymbol ttf-bitstream-vera ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation ttf-mscorefonts-installer
+sudo apt -y install fonts-dejavu fonts-dejavu-extra fonts-droid-fallback fonts-freefont-ttf fonts-liberation fonts-noto-mono fonts-opensymbol ttf-bitstream-vera ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-mscorefonts-installer
 sudo apt -y install aspell aspell-en hunspell hunspell-en-us mythes-en-us
 
-
+sudo apt autoremove
 
 echo "Altering sys using frain dots..."
 
@@ -32,7 +32,7 @@ sudo dpkg -i paper*.deb
 sudo apt-get -y install -f
 
 ## xfce theme from https://www.xfce-look.org/p/1016678/
-tar zxf 95158-axis-xfwm.tar.gz 
+tar zxf 90145-axiom.tar.gz
 sudo cp -pr axis* /usr/share/themes/
 rm -R axis*
 
