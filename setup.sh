@@ -33,8 +33,8 @@ sudo apt-get -y install -f
 
 ## xfce theme from https://www.xfce-look.org/p/1016678/
 tar zxf 90145-axiom.tar.gz
-sudo cp -pr axis* /usr/share/themes/
-rm -R axis*
+sudo cp -pr axiom* /usr/share/themes/
+rm -R axiom*
 
 cd ..
 
