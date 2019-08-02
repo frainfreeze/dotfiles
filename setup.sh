@@ -24,7 +24,7 @@ cp -vaR dots/. ~
 cd tmp 
 
 ## visual studio code from https://code.visualstudio.com/Download
-sudo dpkg -i <code>.deb
+sudo dpkg -i code*.deb
 sudo apt-get -y install -f
 
 ## papericons from https://snwh.org/paper/download
