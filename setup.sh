@@ -8,6 +8,7 @@ sudo apt-get -y install chromium audacious ristretto vlc libreoffice-writer libr
 
 ### misc & sys
 sudo apt -y install rsync thunar-archive-plugin xarchiver xfce4-terminal synaptic curl wget p7zip-full unzip gparted
+sudo apt -y install intel-microcode firmware-realtek
 
 ### fonts and spell checking
 sudo apt -y install fonts-dejavu fonts-dejavu-extra fonts-droid-fallback fonts-freefont-ttf fonts-liberation fonts-noto-mono fonts-opensymbol ttf-bitstream-vera ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-mscorefonts-installer
