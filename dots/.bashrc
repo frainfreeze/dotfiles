@@ -147,3 +147,5 @@ function gitmagic {
 
 #git clone and cd into dir, takes username and repo name
 gitcd() { git clone https://github.com/$1/$2.git; cd $2; }
+
+gibpwd(){ gpg --gen-random --armor 1 20 }
