@@ -149,3 +149,23 @@ function gitmagic {
 gitcd() { git clone https://github.com/$1/$2.git; cd $2; }
 
 gibpwd(){ gpg --gen-random --armor 1 20 }
+
+diary() {
+    local fpath=$HOME/.dir
+       
+    if [ "$1" == "vim" ]; then
+        export EDITOR="vim"
+        base64 -d $fpath | vipe | base64 |& tee $fpath
+    elif [ "$1" == "nano" ]; then
+        export EDITOR="nano"
+        base64 -d $fpath | vipe | base64 |& tee $fpath
+    elif [ "$1" == "date" ]; then
+        echo '' >> $fpath
+        echo `date +"%d-%m-%Y %T"` | base64 >> $fpath
+    elif [ "$1" == "" ]; then
+        base64 -d $fpath | less
+    else
+        echo '' >> $fpath
+        echo $@ | base64 >> $fpath
+    fi
+}
