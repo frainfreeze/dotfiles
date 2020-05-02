@@ -16,7 +16,9 @@ This was written for Debian 10. Download debian amd64 netinst [here](https://cdi
 ### After install
 ```bash
 # as superuser:
-nano /etc/apt/sources.list #add 'contrib non-free' after each main. save and exit
+sudo -i
+nano /etc/apt/sources.list #add 'contrib non-free' after each main
+    - add `deb http://deb.debian.org/debian buster-backports main contrib non-fre`. save and exit
 apt-get update && apt-get upgrade && apt-get install git
 sudo usermod -aG sudo,adm [username] #add [username] to sudoers
 reboot #or log out and log back in
