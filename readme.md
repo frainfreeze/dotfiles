@@ -16,12 +16,16 @@ This was written for Debian 10. Download debian amd64 netinst [here](https://cdi
 ### After install
 ```bash
 # as superuser:
-sudo -i
-nano /etc/apt/sources.list #add 'contrib non-free' after each main
-    - add `deb http://deb.debian.org/debian buster-backports main contrib non-free`. save and exit
+nano /etc/apt/sources.list
+    deb http://deb.debian.org/debian/ bullseye main contrib non-free
+    deb-src http://deb.debian.org/debian/ bullseye main contrib non-free
+    deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+    deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
+    deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
+    deb-src http://deb.debian.org/debian/ bullseye-updates main contrib non-free
 apt-get update && apt-get upgrade && apt-get install git
 sudo usermod -aG sudo,adm [username] #add [username] to sudoers
-reboot #or log out and log back in
+reboot # or log out and log back in
 
 # as user:
 git clone https://github.com/frainfreeze/dotfiles.git && cd dotfiles && chmod +x setup.sh && ./setup.sh && cd .. && rm -rf dotfiles
@@ -96,14 +100,14 @@ And you can view the systemd logs for a particular service using` journalctl -u 
 - Setting up console resolution
 
 ```bash
-    $ apt install hwinfo
-    $ hwinfo --framebuffer //to see available resolutions
-    $ sudo nano /etc/default/grub
-        GRUB_GFXMODE=1024x768 //enter one of available resolutions
-        GRUB_GFXPAYLOAD="keep"
-        GRUB_CMDLINE_LINUX="nomodeset"
-    $ sudo update-grub
-    $ sudo reboot
+sudo apt install hwinfo
+hwinfo --framebuffer //to see available resolutions
+sudo nano /etc/default/grub
+    GRUB_GFXMODE=1024x768 //enter one of available resolutions
+    GRUB_GFXPAYLOAD="keep"
+    GRUB_CMDLINE_LINUX="nomodeset"
+sudo update-grub
+sudo reboot
 ```
 
 - VMWare player
@@ -119,9 +123,9 @@ sudo ./VMware-Player<ver>.bundle
 ![](https://www.bug.hr/img/kupili-smo-jeftinu-mehanicku-tipkovnicu-iz-kine-je-li-se-isplatilo_gduZkX.png)
 
 My keyboards:
-- HP KB-0316 (HR) - For use with default Croatian layout
+- ~~HP KB-0316 (HR) - For use with default Croatian layout~~
 - Modecom MC-800G (US with UK enter) - custom layout, .Xmodmap
-- METOO Black - (US ANSI) - custom layout .Xmodmap
+- ~~METOO Black - (US ANSI) - custom layout .Xmodmap~~
 
 <!--
 Keyboard docs: 
