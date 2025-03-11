@@ -29,8 +29,8 @@ update, upgrade & install dev packages
 ```bash
 sudo apt-get update && sudo apt-get upgrade
 
-# Basic
-sudo apt-get -y install git curl rsync build-essential
+# Basic & build tools
+sudo apt-get -y install git curl rsync build-essential cmake
 
 # TUI & sys
 sudo apt-get -y install tmux links htop ncdu ranger gparted
