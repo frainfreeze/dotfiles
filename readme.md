@@ -2,7 +2,7 @@
 
 ![desktop screenshot](http://i.imgur.com/OPQUMzA.png)
 
-This was written for Debian 10. Download debian amd64 netinst [here](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
+This was written for Debian 12. Download debian amd64 netinst [here](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
 
 ### Using graphical install
 
@@ -52,7 +52,7 @@ Setup instructions:
 Goodies:
 
 - [papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme?tab=readme-ov-file#debian-and-derivatives) (new)
-- [papericons](https://snwh.org/paper) (old) or 
+- [papericons](https://snwh.org/paper) (old)
     - `sudo dpkg -i paper*.deb && sudo apt-get -y install -f`
 - xfce [axis theme](https://www.xfce-look.org/p/1016678/)
     - `tar zxf axis-xfwm.tar.gz && sudo cp -pr axis* /usr/share/themes/ && rm -R axis*`
