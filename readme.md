@@ -1,4 +1,4 @@
-# Tom's Dotfiles
+# Tom's Debian setup
 
 ![desktop screenshot](http://i.imgur.com/OPQUMzA.png)
 
@@ -80,7 +80,6 @@ sudo reboot
 ```
 
 ### Keyboards
-![](https://www.bug.hr/img/kupili-smo-jeftinu-mehanicku-tipkovnicu-iz-kine-je-li-se-isplatilo_gduZkX.png)
 
 My keyboards:
 - Future: Ergo K860 ?
