@@ -4,32 +4,48 @@
 This was written for Debian 10. Download debian amd64 netinst [here](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
 
 ### Using graphical install
-```
+
 - install lang: english
 - locale: en_US
-- partition: guided - use entire disc
-- scheme: seperate /home /var /temp
+- location: croatia
+- no root account
+- partition: guided - use entire disc, LVM, encrypted
+- scheme: all in one
 - use network mirror: yes, Sweden; deb.debian.org; blank proxy
-- software selection: standard sys utilities. xfce & print server
-```
+- software selection: standard sys utilities, xfce & print server
+
 
 ### After install
-```bash
-# as superuser:
-nano /etc/apt/sources.list
-    deb http://deb.debian.org/debian/ bullseye main contrib non-free
-    deb-src http://deb.debian.org/debian/ bullseye main contrib non-free
-    deb http://security.debian.org/debian-security bullseye-security main contrib non-free
-    deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
-    deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
-    deb-src http://deb.debian.org/debian/ bullseye-updates main contrib non-free
-apt-get update && apt-get upgrade && apt-get install git
-sudo usermod -aG sudo,adm [username] #add [username] to sudoers
-reboot # or log out and log back in
 
-# as user:
-git clone https://github.com/frainfreeze/dotfiles.git && cd dotfiles && chmod +x setup.sh && ./setup.sh && cd .. && rm -rf dotfiles
+append `contrib non-free` to apt sources list - if needed
+
+```bash
+sudo nano /etc/apt/sources.list /etc/apt/sources.list.d/*
+
+update, upgrade & install dev packages
+
+```bash
+sudp apt-get update && sudo apt-get upgrade
+sudo apt-get install git curl chromium
 ```
+
+Setup instructions:
+
+- [VSCode](https://wiki.debian.org/VisualStudioCode) - consider using vscodium
+- [Firefox (regular)](https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions) - consider donating to ladybird browser
+- [Chrome](https://support.google.com/chrome/a/answer/9025903?hl=en) - consider using chromium
+
+Goodies:
+
+- [papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme?tab=readme-ov-file#debian-and-derivatives) (new)
+- [papericons](https://snwh.org/paper) (old) or 
+    - `sudo dpkg -i paper*.deb && sudo apt-get -y install -f`
+- xfce [axis theme](https://www.xfce-look.org/p/1016678/)
+    - `tar zxf axis-xfwm.tar.gz && sudo cp -pr axis* /usr/share/themes/ && rm -R axis*`
+
+Copy your home files/dotfiles back into home dir and reboot or log out and log back in.
+
+
 
 ### Disks and backup
 #### Setup
@@ -124,7 +140,7 @@ sudo ./VMware-Player<ver>.bundle
 
 My keyboards:
 - ~~HP KB-0316 (HR) - For use with default Croatian layout~~
-- Modecom MC-800G (US with UK enter) - custom layout, .Xmodmap
+- ~~Modecom MC-800G (US with UK enter) - custom layout, .Xmodmap~~
 - ~~METOO Black - (US ANSI) - custom layout .Xmodmap~~
 
 <!--
