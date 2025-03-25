@@ -81,12 +81,13 @@ sudo reboot
 
 - Debian GUI freezes after lockscreen login
 
+Just install xscreensaver package. It's magic.
+
 ```bash
-sudo apt install haveged
-sudo systemctl enable haveged
+sudo apt-get install xscreensaver*
 ```
 
-thanks [HoaS](https://forums.debian.net/viewtopic.php?p=679963&sid=dcda295d7feffcc5b9760e905b19db76#p679963)
+thanks https://www.jwz.org/
 
 
 
