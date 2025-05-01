@@ -90,6 +90,52 @@ sudo apt-get install xscreensaver*
 thanks https://www.jwz.org/
 
 
+### git config - handling multiple git auths
+
+It is often that you have a local git setup where you have at least 2 accounts: your private one and your work one. This is very simple to setup:
+
+In your main gitconfig (`~/.gitconfig`) create includes for accounts:
+```config
+...
+
+[includeIf "gitdir/i:~/work/personal_github/"]
+    path = ~/work/personal_github/.gitconfig
+
+[includeIf "gitdir/i:~/work/job_github/"]
+    path = ~/work/job_github/.gitconfig
+
+[user]
+        email = yourdefaultmail@example.com
+        name  = yourdefaultname
+```
+
+Then define your included configs. 
+
+eg. for job's github acc using ssh key generated for that account, ` ~/work/job_github/.gitconfig`
+
+```config
+[credential]
+    username = job_profile_username
+[user]
+    name = job_profile_name
+    email = job_email@pain.com
+[core]
+    sshCommand = "ssh -i ~/.ssh/job_sshkey"
+```
+
+eg. for localy stored plaintext password, for http localhost git server auth profile (you should use credentials store, this is just very simple unsafe example)
+
+```
+[credential]
+    username = username
+    passowrd = plaintext_password
+[user]
+    name = username
+    email = email@example.com
+[core]
+  sshCommand = "ssh"
+```
+
 
 ### Keyboards
 
